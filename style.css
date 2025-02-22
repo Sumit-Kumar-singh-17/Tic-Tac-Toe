@@ -1,0 +1,230 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #335e7f, #2575fc);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Container Styles */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px 30px 0px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 0px;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Board Styles */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Individual Cells */
+.cell {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #9d1a1a;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+.cell.taken {
+    pointer-events: none;
+    color: #555;
+}
+
+.winning-message {
+    font-size: 1.33rem;
+    margin-top: 20px;
+    /* color: #333; */
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+            -webkit-background-clip: text;
+            color: transparent;
+}
+
+/* Restart Button */
+button {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Styles */
+@media (max-width: 500px) {
+    body {
+        height: 100vh;
+        flex-direction: column;
+        padding: 0px;
+        overflow-x: hidden;
+        justify-content: center;
+        align-items: center;
+    }
+    .board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 3rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .container {
+        width: 90vw;
+        min-height: 300px;
+        padding: 0;
+    }
+
+    .container p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        padding: 0px;
+    }
+
+    .player_div {
+        /* margin: 20px 0 !important; */
+        display: none !important;
+    }
+
+    .player_div img {
+        max-width: 50%;
+        width: auto;
+        height: auto;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        top: 10px;
+    }
+      }
+
+.player_div {
+    color: #333;
+    padding: 0px 10px;
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #a09494;
+    margin-bottom: 20px;
+    text-align: center;
+    /* position: /* absolute; */
+    /* top:  20px; */
+    border-radius: 10px;
+}
+
+.player_div img {
+    width: 200px;
+}
+
+/* Advanced styling for X */
+.X {
+    color: #ff6f61;
+    font-family: 'Arial Black', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    animation: pop 0.3s ease;
+}
+
+/* Advanced styling for O */
+.O {
+    color: #2a9d8f;
+    font-family: 'Arial Black', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    animation: pop 0.3s ease;
+}
+
+/* Pop-in animation */
+@keyframes pop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1)
+; 
+}
+}
+
+
+@media (max-width: 668px) {
+    .container {
+        width: 90vw;
+        min-height: 300px;
+    }
+
+    .board {
+        gap: 0px;
+    }
+}
